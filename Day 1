@@ -1,3 +1,5 @@
+#Day 1
+
 #Greeting
 print("Welcome to band name generator!")
 
@@ -9,3 +11,5 @@ users_pet = input("What is your first pet name ?\n")
 
 #genrated band name
 band_name = ("Your band name could be " + users_city + " " + users_pet)
+
+#Day 1 CodeOver
