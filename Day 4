@@ -1,0 +1,91 @@
+from ast import Break
+import random
+
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+variable = [rock,paper,scissors]
+User_points = 0
+Comp_points = 0
+Best_of = int(input("How much best u want this game: "))
+
+while User_points != Best_of and Comp_points != Best_of:
+    
+    #User_Input
+    User_choice = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors."))
+    print(variable[User_choice])
+
+    #line print
+    print("            Player            ")
+    print("_____________\VS/_____________")
+    print("           Computer           ")
+
+    #Computer_Randomization
+    int_comp_choice = len(variable)
+    random_comp_choice = random.randint(0, int_comp_choice - 1)
+    print(variable[random_comp_choice])
+
+    #conditional statements
+    if User_choice == 0 and random_comp_choice == 0:
+        print("Its a draw.")
+    elif User_choice == 1 and random_comp_choice == 1:
+        print("Its a draw.")    
+    elif User_choice == 2 and random_comp_choice == 2:
+        print("Its a draw.")
+    elif User_choice == 0 and random_comp_choice == 1:
+        print("Computer Wins.")
+        Comp_points += 1
+    elif User_choice == 1 and random_comp_choice == 0:
+        print("You Wins.")
+        User_points += 1
+    elif User_choice == 1 and random_comp_choice == 2:
+        print("Computer Wins.")
+        Comp_points += 1
+    elif User_choice == 2 and random_comp_choice == 1:
+        print("You Wins.")
+        User_points += 1
+    elif User_choice == 0 and random_comp_choice == 2:
+        print("You Wins.")
+        User_points += 1
+    else:
+        print("Computer Wins.")
+        Comp_points += 1
+    
+if User_points == Best_of:
+    print("###########################################################################")
+    print("###########################################################################")
+    print("##########################🥳🥳Player Wins🥳🥳#############################")
+    print("###########################################################################")
+    print("###########################################################################")
+elif Comp_points == Best_of:
+    print("###########################################################################")
+    print("###########################################################################")
+    print("###########################🥳🥳Computer Wins🥳🥳#########################")
+    print("###########################################################################")
+    print("###########################################################################")   
+else:
+    print("👎👎👎Game is Draw!!!👎👎👎")
